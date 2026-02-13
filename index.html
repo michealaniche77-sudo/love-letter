@@ -25,6 +25,28 @@
         overflow-x: hidden;
         color: #8a1c4a;
       }
+/* Add this anywhere in your main CSS (outside the media query) */
+audio {
+  max-width: 100%;
+  height: auto;
+  border-radius: 30px;
+}
+
+.song {
+  background: #f8e8ee;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Add this line */
+}
+
+.song-info {
+  flex: 1;
+  min-width: 200px; /* Add this line */
+}
 
       /* Password Modal */
       .password-modal {
