@@ -349,30 +349,68 @@
       }
 
       /* Responsive Design */
-      @media (max-width: 768px) {
-        .welcome-message {
-          font-size: 36px;
-        }
+ 
+					@media (max-width: 768px) {
+  .welcome-message {
+    font-size: 36px;
+  }
 
-        .tabs {
-          flex-direction: column;
-          align-items: center;
-        }
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
 
-        .tab {
-          width: 100%;
-          justify-content: center;
-        }
+  .tab {
+    width: 100%;
+    justify-content: center;
+  }
 
-        .gallery {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .song-info audio{
-          margin-right: 2em;
-          overflow-x: hidden;
-          flex: 0 0 auto;
-        }
-      }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* FIX FOR AUDIO PLAYERS - Add this new code */
+  .song {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .song-info {
+    width: 100%;
+  }
+
+  .song-info audio {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  audio {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fix for content area padding on mobile */
+  .content-area {
+    padding: 20px 15px;
+  }
+
+  /* Fix for song info text */
+  .song-info h4 {
+    font-size: 16px;
+    word-wrap: break-word;
+  }
+
+  .song-info p {
+    font-size: 13px;
+  }
+  
+}
+  
     </style>
   </head>
   <body>
