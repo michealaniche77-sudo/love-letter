@@ -47,7 +47,57 @@ audio {
   flex: 1;
   min-width: 200px; /* Add this line */
 }
+/* Music Tab - COMPLETE FIX */
+.song {
+  background: #f8e8ee;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
+.song-icon {
+  font-size: 24px;
+  color: #d81b60;
+  min-width: 40px;
+  text-align: center;
+}
+
+.song-info {
+  flex: 1;
+  min-width: 150px;
+}
+
+.song-info h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #8a1c4a;
+}
+
+.song-info p {
+  color: #b04b6b;
+  font-size: 14px;
+}
+
+.audio-container {
+  flex: 2;
+  min-width: 250px;
+}
+
+audio {
+  width: 100%;
+  height: 40px;
+  border-radius: 30px;
+}
+
+/* Fix for Gallery tab emoji */
+.tab[data-tab="gallery"] span {
+  display: inline-block;
+  margin-right: 5px;
+}
       /* Password Modal */
       .password-modal {
         position: fixed;
@@ -391,7 +441,7 @@ audio {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* FIX FOR AUDIO PLAYERS - Add this new code */
+  /* FIXED MUSIC SECTION FOR MOBILE */
   .song {
     flex-direction: column;
     align-items: flex-start;
@@ -403,35 +453,27 @@ audio {
     width: 100%;
   }
 
-  .song-info audio {
+  .audio-container {
     width: 100%;
-    max-width: 100%;
-    margin-right: 0;
-    margin-top: 10px;
   }
 
   audio {
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    height: 45px; /* Slightly taller on mobile for easier touch */
   }
 
-  /* Fix for content area padding on mobile */
   .content-area {
     padding: 20px 15px;
   }
 
-  /* Fix for song info text */
   .song-info h4 {
     font-size: 16px;
-    word-wrap: break-word;
   }
 
   .song-info p {
     font-size: 13px;
   }
-  
-}
+					}
   
     </style>
   </head>
@@ -442,7 +484,7 @@ audio {
         <h2>Enter the secret code</h2>
         <input
           type="password"
-          class="password-input"
+			          class="password-input"
           id="passwordInput"
           placeholder="Our special word..."
         />
@@ -498,34 +540,39 @@ audio {
           </div>
         </div>
 
+        
         <!-- Music Tab -->
-        <div class="tab-content" id="music">
-          <h2>Songs that remind me of you</h2>
-          <div class="song">
-            <div class="song-icon">🎵</div>
-            <div class="song-info">
-              <h4>Wait for me</h4>
-              <p>by Johnny Drille</p>
-              <br> <br>
-<audio controls>
-    <source src="music/Johnny-Drille-Wait-For-Me-JRL4-(CeeNaija.com).mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-            </div>
-          </div>
-          <div class="song">
-            <div class="song-icon">🎵</div>
-            <div class="song-info">
-              <h4>Romeo & Juliet</h4>
-              <p>by Johnny Drille</p>
-              <br> <br>
-<audio controls>
-    <source src="music/Johnny_Drille_-_Romeo___Juliet___Official_Music_Video__(256k).mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-            </div>
-          </div>
-        </div>
+<div class="tab-content" id="music">
+  <h2>Songs that remind me of you</h2>
+  
+  <div class="song">
+    <div class="song-icon">🎵</div>
+    <div class="song-info">
+      <h4>Wait for me</h4>
+      <p>by Johnny Drille</p>
+    </div>
+    <div class="audio-container">
+      <audio controls>
+        <source src="music/Johnny-Drille-Wait-For-Me-JRL4-(CeeNaija.com).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+  
+  <div class="song">
+    <div class="song-icon">🎵</div>
+    <div class="song-info">
+      <h4>Romeo & Juliet</h4>
+      <p>by Johnny Drille</p>
+    </div>
+    <div class="audio-container">
+      <audio controls>
+        <source src="music/Johnny_Drille_-_Romeo___Juliet___Official_Music_Video__(256k).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+</div>
 
         <!-- Notes Tab -->
         <div class="tab-content" id="notes">
@@ -691,3 +738,4 @@ audio {
     </script>
   </body>
 </html>
+
